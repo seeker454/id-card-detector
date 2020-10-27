@@ -17,7 +17,7 @@ from utils import visualization_utils as vis_util
 
 # Name of the directory containing the object detection module we're using
 MODEL_NAME = 'model'
-IMAGE_NAME = 'test_images/image1.png'
+IMAGE_NAME = 'test_images/aps.png'
 
 # Grab path to current working directory
 CWD_PATH = os.getcwd()
@@ -101,7 +101,9 @@ im_width, im_height = shape[1], shape[0]
 (left, right, top, bottom) = (xmin * im_width, xmax * im_width, ymin * im_height, ymax * im_height)
 
 # Using Image to crop and save the extracted copied image
+image_path=r"C:\Users\SEKH\Projects\idProject\id-card-detector\test_images\aps.png"
 im = Image.open(image_path)
+output_path=r"C:\Users\SEKH\Projects\idProject\id-card-detector\test_images\aps.png"
 im.crop((left, top, right, bottom)).save(output_path, quality=95)
 
 cv2.imshow('ID-CARD-DETECTOR : ', image)
